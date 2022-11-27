@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './App.scss';
+import Header from './components/Header';
+import Story from './components/Story';
+import Marriage from './components/Marriage';
+import Memories from './components/Memories';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
+  const [height, setHeight] = useState(window.innerHeight);
+  // eslint-disable-next-line no-unused-vars
+  const [width, setWidth] = useState(window.innerWidth);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header h={height} w={width} />
+      <Story h={height} w={width} />
+      <Marriage h={height} w={width} />
+      <Memories h={height} w={width} />
     </div>
   );
 }
