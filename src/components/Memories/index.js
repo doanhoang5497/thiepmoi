@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import './Memories.scss';
 import img1 from '../../assets/images/gallery/1.JPG';
@@ -92,7 +93,7 @@ function Memories({ h }) {
     <div className="gallery">
       {data.map((item) => {
         return (
-          <div key={item} className="pics">
+          <div key={item.src} className="pics">
             <img src={item.src} style={{ width: '100%' }} />
           </div>
         );

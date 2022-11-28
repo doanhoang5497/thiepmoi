@@ -10,11 +10,19 @@ function Header({ h, w }) {
         alt="title"
       />
       <div className="header">
-        <img
-          style={{ width: `60%`, marginTop: `3%` }}
-          src={require('../../assets/images/background.png')}
-          alt="title"
-        />
+        {w < 992 ? (
+          <img
+            style={{ width: `50%`, marginTop: `3%` }}
+            src={require('../../assets/images/backgroundmb.png')}
+            alt="title"
+          />
+        ) : (
+          <img
+            style={{ width: `60%`, marginTop: `3%` }}
+            src={require('../../assets/images/background.png')}
+            alt="title"
+          />
+        )}
       </div>
     </div>
   );

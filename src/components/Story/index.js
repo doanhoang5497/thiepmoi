@@ -5,10 +5,14 @@ import './Story.scss';
 function Story({ h, w }) {
   return (
     <div style={{ height: `${h}px`, width: `${w}px` }} className="moi">
-      <img
-        src={require('../../assets/images/left.png')}
-        style={{ marginTop: '-10%' }}
-      />
+      {w > 992 ? (
+        <img
+          src={require('../../assets/images/left.png')}
+          style={{ marginTop: '-10%' }}
+        />
+      ) : (
+        ''
+      )}
       <div
         style={{
           display: 'flex',
@@ -16,12 +20,27 @@ function Story({ h, w }) {
           alignItems: 'center',
           padding: '50px',
         }}>
+        {w < 768 ? (
+          <img
+            src={require('../../assets/images/asss.png')}
+            style={{ width: '30%' }}
+          />
+        ) : (
+          ''
+        )}
         <img
           src={require('../../assets/images/name.png')}
           style={{ width: `100%` }}
         />
-        <h1 style={{ marginTop: '50px' }}>TRÂN TRỌNG KÍNH MỜI</h1>
-        <div>Tới dự bữa cơm thân mật chung vui cùng chúng tôi</div>
+        {w < 768 ? (
+          <h3 style={{ marginTop: '50px' }}>TRÂN TRỌNG KÍNH MỜI</h3>
+        ) : (
+          <h1 style={{ marginTop: '50px' }}>TRÂN TRỌNG KÍNH MỜI</h1>
+        )}
+
+        <div style={w < 768 ? { fontSize: '12px' } : {}}>
+          Tới dự bữa cơm thân mật chung vui cùng chúng tôi
+        </div>
 
         <div
           style={{
@@ -31,10 +50,17 @@ function Story({ h, w }) {
             marginTop: '20px',
           }}>
           <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}>
+            style={
+              w < 768
+                ? {
+                    display: 'grid',
+                    justifyItems: 'center',
+                  }
+                : {
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                  }
+            }>
             <div className="tai">
               <div
                 style={{
@@ -87,12 +113,14 @@ function Story({ h, w }) {
           </div>
         </div>
       </div>
-      <img
-        src={require('../../assets/images/right.png')}
-        style={{
-          marginTop: '100%',
-        }}
-      />
+      {w > 992 ? (
+        <img
+          src={require('../../assets/images/right.png')}
+          style={{ marginTop: '-10%' }}
+        />
+      ) : (
+        ''
+      )}
     </div>
   );
 }
