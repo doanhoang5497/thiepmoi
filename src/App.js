@@ -10,8 +10,26 @@ function App() {
   const [height, setHeight] = useState(window.innerHeight);
   // eslint-disable-next-line no-unused-vars
   const [width, setWidth] = useState(window.innerWidth);
+
   return (
     <div className="App">
+      <ul className="g-snows" id="jsi-snows">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
       <Header h={height} w={width} />
       <Story h={height} w={width} />
       <Marriage h={height} w={width} />

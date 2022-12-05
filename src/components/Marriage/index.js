@@ -12,11 +12,19 @@ function Marriage({ h, w }) {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Iframe
-        url="https://www.youtube.com/embed/aW7mKiRAK3Q"
-        width="60%"
-        height="60%"
-      />
+      {w < 992 ? (
+        <Iframe
+          url="https://www.youtube.com/embed/a6dAdLG2QVI"
+          width="99%"
+          height="40%"
+        />
+      ) : (
+        <Iframe
+          url="https://www.youtube.com/embed/a6dAdLG2QVI"
+          width="60%"
+          height="60%"
+        />
+      )}
     </div>
   );
 }
